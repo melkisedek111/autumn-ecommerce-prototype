@@ -46,6 +46,12 @@ body {
   color: white;
 }
 
+.nav__userLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .nav__userLinks a {
   display: inline-block;
   margin-right: 30px;
@@ -74,6 +80,99 @@ body {
   text-align: center;
   vertical-align: text-bottom;
   color: white;
+}
+
+.nav__userLinks .linkCartContainer {
+  position: relative;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer {
+  display: none;
+  padding: 0 20px;
+  padding-top: 20px;
+  -webkit-clip-path: polygon(0 2%, 46% 2%, 50% 0, 54% 2%, 100% 2%, 100% 100%, 0 100%);
+          clip-path: polygon(0 2%, 46% 2%, 50% 0, 54% 2%, 100% 2%, 100% 100%, 0 100%);
+  background-color: #f8f8f8;
+  position: absolute;
+  right: -9.8rem;
+  z-index: 999;
+  width: 23rem;
+  height: 30rem;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer h2 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer a {
+  margin-top: 10px;
+  border: .5px solid black;
+  text-align: center;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div {
+  height: 24rem;
+  overflow-y: scroll;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div > div {
+  border-top: 0.5px solid lightgray;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div > div img {
+  height: 10rem;
+  width: 7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div > div > div {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div > div > div h3,
+.nav__userLinks .linkCartContainer .cartContainer > div > div > div p {
+  margin: 0;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div > div > div h3 {
+  font-size: 1.3em;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer > div > div > div p {
+  font-size: 1.3em;
+}
+
+.nav__userLinks .linkCartContainer .cartContainer:hover {
+  display: block;
+}
+
+.nav .myCart:hover ~ .cartContainer {
+  display: block;
 }
 
 .wrapper {
@@ -362,18 +461,225 @@ body {
 }
 
 .shop {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 300px 8px;
-      grid-template-columns: 300px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .shop__filter {
-  background-color: lightgray;
+  -webkit-box-flex: 0.27;
+      -ms-flex: 0.27;
+          flex: 0.27;
+  padding: 15px;
+}
+
+.shop__filter .shop__categories {
+  padding-bottom: 30px;
+  margin-bottom: 100px;
+  border-bottom: 0.5px solid lightgray;
+}
+
+.shop__filter .shop__categories h2 {
+  margin-bottom: 50px;
+}
+
+.shop__filter .shop__filterBy--price {
+  margin-bottom: 50px;
+}
+
+.shop__filter .shop__filterBy--price div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.shop__filter .shop__filterBy--price small {
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.shop__filter .shop__filterBy--size, .shop__filter .shop__filterBy--brands {
+  margin-bottom: 50px;
 }
 
 .shop__filteredItems {
-  background-color: lightskyblue;
+  -webkit-box-flex: 0.9;
+      -ms-flex: 0.9;
+          flex: 0.9;
+  padding: 15px 5px;
+}
+
+.shop__filteredItems .shop__filterOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.shop__filteredItems .shop__filterOptions h2 {
+  margin: 0;
+}
+
+.shop__filteredItems .shop__filterOptions h2 span {
+  color: red;
+}
+
+.shop__filteredItems .shop__filterOptions div * {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+.shop__filteredItems .shop__filterOptions div select {
+  width: 150px;
+  max-width: 150px;
+}
+
+.shop__filteredItems .shop__filterOptions div span {
+  cursor: pointer;
+  font-size: 22px;
+  margin-right: 10px;
+}
+
+.shop__filteredItems .shop__filterResults {
+  margin-top: 30px;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne:nth-child(3n) {
+  margin-right: 0;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne {
+  margin-right: 5px;
+  margin-bottom: 20px;
+  border: 0.5px solid lightgray;
+  height: 400px;
+  max-width: 275px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemImageContainer {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemImageContainer a img {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemImageContainer .addToCart {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  padding: 10px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
+  background-image: linear-gradient(#000, #000);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-transition: background-size 0.25s, color 0.25s;
+  transition: background-size 0.25s, color 0.25s;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemImageContainer .addToCart h1 {
+  margin: 0;
+  font-weight: 300;
+  line-height: 30px;
+  font-size: 50px;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemImageContainer .addToCart:hover {
+  color: white;
+  background-size: 100% 100%;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemImageContainer:hover .addToCart {
+  display: block;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemDetails {
+  padding: 5px 10px;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemDetails h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.shop__filteredItems .shop__filterResults .filterDesignOne .itemDetails h3 {
+  margin: 0;
+  color: #909090;
+}
+
+.shop .shop__categories a,
+.shop .shop__filterBy a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
+  background-image: linear-gradient(#000, #000);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-transition: background-size 0.25s, color 0.25s;
+  transition: background-size 0.25s, color 0.25s;
+}
+
+.shop .shop__categories a h3,
+.shop .shop__filterBy a h3 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.shop .shop__categories a:hover,
+.shop .shop__filterBy a:hover {
+  color: white;
+  background-size: 100% 100%;
+}
+
+.form-control:not(:last-child) {
+  margin-right: 10px;
+}
+
+.form-control {
+  height: 50px;
+  border: none;
+  border-bottom: 0.5px solid black;
+  font-family: "Rajdhani", sans-serif;
+  padding: 0 5px;
+  outline: none;
+  font-size: 18px;
+  width: 100%;
+}
+
+.activeFilter {
+  color: red !important;
 }
 
 footer {
@@ -440,7 +746,8 @@ footer .right_reserve p span {
 }
 
 @media screen and (max-width: 1149px) {
-  .category, .latestItems {
+  .category,
+  .latestItems {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
