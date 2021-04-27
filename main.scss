@@ -33,13 +33,17 @@ body {
 	box-sizing: border-box;
 	// font-family: 'Josefin Sans', sans-serif;
 	font-family: "Rajdhani", sans-serif;
+	@include scrollDesign();
 }
-
+.modalOpen {
+	overflow: hidden;
+}
 .nav {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
 	padding: 20px 0;
+	border-bottom: .5px solid lightgray;
 	a {
 		text-decoration: none;
 		color: black;
@@ -1279,6 +1283,156 @@ body {
 }
 
 .adminProduct {
+	&__modal {
+		display: none;
+		// padding: 1rem 0;
+		z-index: 999;
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		background: rgba(0, 0, 0, 0.3);
+		overflow-y: scroll;
+		@include scrollDesign();
+		top: 0;
+		left: 0;
+		&--form {
+			width: 35rem;
+			padding: 1rem 2rem;
+			display: block;
+			margin: 2rem auto;
+			// margin-bottom: 2rem;
+			background-color: white;
+			form {
+				> div {
+					label {
+						font-size: 1.2rem;
+					}
+					margin-bottom: 1.5rem;
+				}
+				.productImageList {
+					> div {
+						> div {
+							margin-bottom: 1.2rem;
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							img {
+								height: 10rem;
+								width: 10rem;
+								object-fit: contain;
+							}
+							span {
+								font-size: 1.3rem;
+								cursor: pointer;
+								color: red;
+							}
+							> div {
+								display: flex;
+								align-items: center;
+								input[type="checkbox"] {
+									width: 1.2rem;
+									height: 1.2rem;
+									margin-right: 10px;
+									cursor: pointer;
+								}
+								input[type="checkbox"]:checked {
+									background-color: #000 !important;
+								}
+							}
+						}
+					}
+				}
+				.formButtons {
+					display: flex;
+					justify-content: center;
+					a,
+					input {
+						margin: 0 0.5rem;
+					}
+				}
+				.modifiedSelect {
+					position: relative;
+					select {
+						option {
+							display: none;
+							background-color: red;
+						}
+					}
+					select:focus ~ .selectOpions {
+						display: block;
+						option {
+							display: none;
+							background-color: red;
+							z-index: -1;
+						}
+					}
+					.selectOpions {
+						z-index: 999;
+						display: none;
+						max-height: 195.5px;
+						position: absolute;
+						background-color: white;
+						width: 100%;
+						border-bottom: 0.5px solid lightgray;
+						border-right: 0.5px solid lightgray;
+						border-left: 0.5px solid lightgray;
+						overflow-y: scroll;
+						&::-webkit-scrollbar-track {
+							-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+							background-color: #f5f5f5;
+						}
+
+						&::-webkit-scrollbar {
+							width: 5px;
+							background-color: #f5f5f5;
+						}
+
+						&::-webkit-scrollbar-thumb {
+							background-color: #000000;
+							border: 2px solid #555555;
+						}
+						> div {
+							padding: 0.8rem 0;
+							cursor: pointer;
+							h3,
+							input {
+								margin: 0 0.8rem;
+							}
+							input {
+								width: 70%;
+							}
+
+							span {
+								margin-right: 0.8rem;
+								font-size: 1.1em;
+								padding: 0.5rem;
+							}
+							span:hover {
+								background-color: black;
+								color: white;
+							}
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+						}
+
+						> div:hover {
+							background-color: rgb(245, 245, 245);
+							// color: white;
+						}
+					}
+					.selectOpions:focus-within {
+						display: block;
+					}
+					.selectOpions:focus,
+					.selectOpions:hover {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
 	&__productTable {
 		&--search {
 			display: flex;
@@ -1301,7 +1455,7 @@ body {
 			}
 			.productTableAction {
 				// display: flex;
-				a {
+				button {
 					margin: 0 0.1rem;
 					padding: 0.5rem 1rem;
 				}
@@ -1492,19 +1646,19 @@ body {
 		display: flex;
 		justify-content: space-between;
 		&--shippingInfo {
-			flex: .3;
+			flex: 0.3;
 			padding: 0 1rem;
-		}	
+		}
 		&--billingInfo {
-			flex: .3;
+			flex: 0.3;
 			padding: 0 1rem;
-		}	
+		}
 		&--itemSummary {
-			flex: .4;
+			flex: 0.4;
 			padding: 0 1rem;
 
 			> div {
-				padding-right: .5rem;
+				padding-right: 0.5rem;
 				height: 28.125rem;
 				max-height: 28.125rem;
 				overflow-y: scroll;
@@ -1513,9 +1667,9 @@ body {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
-					border-top: .5px solid lightgray;
-					margin: .5rem 0;
-					padding-top: .5rem;
+					border-top: 0.5px solid lightgray;
+					margin: 0.5rem 0;
+					padding-top: 0.5rem;
 					img {
 						height: 8rem;
 						height: 8rem;
@@ -1527,7 +1681,7 @@ body {
 					> div {
 						small {
 							display: block;
-							font-size: .9rem;
+							font-size: 0.9rem;
 							span {
 								font-weight: bolder;
 							}
@@ -1543,7 +1697,7 @@ body {
 			}
 			> h3 {
 				padding: 1rem;
-				border: .5px solid black;
+				border: 0.5px solid black;
 				display: inline-block;
 				color: black;
 				font-weight: normal;
@@ -1561,11 +1715,88 @@ body {
 				background-color: red;
 				color: white;
 			}
-		}	
+		}
 	}
 }
 
-
+.loginRegister {
+	width: 550px;
+	height: auto;
+	background-color: white;
+	margin: 0 auto;
+	margin-top: 50px;
+	border: .5px solid lightgray;
+	.break {
+		border-bottom: 0.5px solid lightgray;
+	}
+	.break1 {
+		border-bottom: 0.5px solid black;
+		margin-bottom: 2.5rem;
+	}
+	.break2 {
+		border-bottom: 2px solid black;
+	}
+	.invalid-feedback {
+		color: red;
+		font-size: 13px;
+		font-weight: lighter;
+		margin-top: 5px;
+	}
+	.is-invalid {
+		border: 0.5px solid red !important;
+	}
+	&__heading {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	&__heading > a {
+		width: 100%;
+		text-align: center;
+		text-decoration: none;
+		color: black;
+	}
+	&__heading > a > h5 {
+		padding: .3rem 0;
+		font-weight: bolder;
+		font-size: 18px;
+		
+	}
+	&__heading > a {
+		@include hoverStyle();
+	}
+	&__heading > a:hover {
+		background-size: 100% 100%;
+		color: white;
+	}
+	&__body {
+		padding: 30px 90px;
+	}
+	&__body > h3 {
+		font-weight: bolder;
+		text-align: center;
+		font-size: 30px;
+	}
+	&__input {
+		margin-bottom: 1.4rem;
+		label {
+			font-weight: bold;
+			small {
+				font-weight: lighter;
+			}
+			span {
+				color: red;
+			}
+		}
+	}
+	.loginRegister__body {
+		input[type="submit"] {
+			margin-top: 2rem;
+			display: block !important;
+			width: 100%;
+		}
+	}
+}
 
 .tbl {
 	border-collapse: collapse;

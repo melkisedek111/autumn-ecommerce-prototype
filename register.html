@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="main.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="" class="nav__icon">AUTUMN</a>
+        <div class="nav__navLinks">
+            <a href="/index.html">Home</a>
+            <a href="/shop.html">Shop</a>
+            <a href="/collections">Collections</a>
+        </div>
+        <div class="nav__userLinks">
+            <a href=""><i class="far fa-user"></i></a>
+            <div class="linkCartContainer">
+                <a href="" class="myCart"><i class="far fa-shopping-bag"></i><span class="nav__cartCount">10</span></a>
+                <div class="cartContainerOutside">
+                    <div class="cartContainerInside">
+                        <h2>Items in Bag: <span>25</span></h2>
+                        <div>
+                            <div>
+                                <img src="https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                <div>
+                                    <h3>Dark Cloak Embroid Design</h3>
+                                    <p><span>$49.99</span> X <span>6</span></p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                <div>
+                                    <h3>Dark Cloak Embroid Design</h3>
+                                    <p><span>$49.99</span> X <span>6</span></p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="https://images.pexels.com/photos/322207/pexels-photo-322207.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+                                <div>
+                                    <h3>Dark Cloak Embroid Design</h3>
+                                    <p><span>$49.99</span> X <span>6</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="">Go to checkout</a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="">Login</a>
+ 
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="loginRegister">
+            <form action="/ecommerce/signin" method="POST">
+                <div class="loginRegister__heading">
+                    <a href="loginRegister.html">
+                        <h5>Register Customer</h5>
+                        <div class="break  break2"></div>
+                    </a>
+                    <a href="login.html">
+                        <h5>Login Customer</h5>
+                        <div class="break"></div>
+                    </a>
+                </div>
+                <div class="loginRegister__body">
+                    <h3>Login to your Account</h3>
+                    <div class="break1"></div>
+                    <div class="loginRegister__input">
+                        <label for="">Email Address <span>*</span></label>
+                        <input type="text" name="email" class="form-control" placeholder="Please enter your email">
+                        <p>We will send messages to the above email address. Please ensure the email address is accessible and up-to-date.</p>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="loginRegister__input">
+                        <label for="">Password <span>*</span></label>
+                        <input type="password" name="password" class="form-control" placeholder="Please enter your password">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="loginRegister__input">
+                        <label for="">Confirm Password <span>*</span></label>
+                        <input type="password" name="confirm_password" class="form-control" placeholder="Please confirm your password">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="loginRegister__input">
+                        <label for="">First Name <span>*</span> <small>-what should we call you?</small></label>
+                        <input type="text" name="full_name" class="form-control" placeholder="Please enter your first name">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <div class="loginRegister__input">
+                        <label for="">Last Name <span>*</span> <small>-what should we call you?</small></label>
+                        <input type="text" name="full_name" class="form-control" placeholder="Please enter your last name">
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <!-- <input type="hidden" name="<?= csrf_token(); ?>" value="<?= csrf_hash(); ?>"> -->
+                    <input type="submit" value="SIGN UP" class="btn hover">
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div class="break"></div>
+            <div class="details">
+                <div>
+                    <a href="">Terms & Condition</a>
+                    <a href="">Policy</a>
+                    <a href="">Map</a>
+                </div>
+                <a href="" class="icon">AUTUMN</a>
+                <div>
+                    <h5>Follow Us On Social</h5>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="right_reserve">
+                <p>&copy; 2021 <span>Autumn</span>. All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

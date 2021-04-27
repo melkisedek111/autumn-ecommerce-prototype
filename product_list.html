@@ -75,7 +75,7 @@
                                 <th width="25%">Name</th>
                                 <th width="10%">Inventory Count</th>
                                 <th width="10%">Quantity Sold</th>
-                                <th width="20%">Action</th>
+                                <th width="15%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -87,22 +87,22 @@
                                 <td>20</td>
                                 <td>
                                    <div class="productTableAction">
-                                        <a href="" class="btn hover">Edit</a>
-                                        <a href="" class="btn hover-danger">Delete</a>
-                                   </div>
+                                         <button class="btn hover editProduct" ><span class="far fa-edit"></span></button>
+                                         <button class="btn hover-danger"><span class="far fa-trash"></span></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td><img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt=""></td>
                                 <td>10</td>
-                                <td>9/6/2014</td>
+                                <td>9/6/2014</td>   
                                 <td>2000</td>
                                 <td>150</td>
                                 <td>
                                     <div class="productTableAction">
-                                         <a href="" class="btn hover">Edit</a>
-                                         <a href="" class="btn hover-danger">Delete</a>
-                                    </div>
+                                        <button class="btn hover editProduct"><span class="far fa-edit"></span></button>
+                                         <button class="btn hover-danger"><span class="far fa-trash"></span></button>
+                                   </div>
                                  </td>
                             </tr>
                         </tbody>
@@ -117,6 +117,147 @@
                         <a href="">Next Page</a>
                         <a href="">Last Page</a>
                     </div>
+                </div>
+            </div>
+            <div class="adminProduct__modal" tabindex="-1">
+                <div class="adminProduct__modal--form">
+                    <h1>Add new product</h1>
+                    <form action="">
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" placeholder="product name">
+                        </div>
+                        <div>
+                            <label for="name">Description</label>
+                            <textarea name="" id="" cols="30" rows="10" class="form-control textArea-control-2" placeholder="product description"></textarea>
+                        </div>
+                        <div>
+                            <label for="name">Price</label>
+                            <input type="text" class="form-control" placeholder="product price">
+                        </div>
+                        <div class="modifiedSelect">
+                            <label for="name">Categories</label>
+                            <select name="category" id="" class="form-control parentSelect">
+                                <option value="">Select Category</option>
+                            </select>
+                            <div class="selectOpions" tabindex="-1">
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Bags & Backpacks" data-name="category" data-id="1">Bags & Backpacks</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="category" data-id="1"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="1"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Pants & Jeans" data-name="category" data-id="2">Pants & Jeans</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="category" data-id="2"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="2"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Pendant & Necklace" data-name="category" data-id="3">Pendant & Necklace</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="category" data-id="3"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="3"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="T - Shirts" data-name="category" data-id="4">T - Shirts</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="category" data-id="4"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="4"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Jackets" data-name="category" data-id="5">Jackets</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="category" data-id="5"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="5"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="name">or add new Category</label>
+                            <input type="text" class="form-control" placeholder="add new product category">
+                        </div>
+                        <div class="modifiedSelect">
+                            <label for="name">Brands</label>
+                            <select name="brand" id="" class="form-control parentSelect">
+                                <option value="">Select Brand</option>
+                            </select>
+                            <div class="selectOpions" tabindex="-1">
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="The North Face" data-name="brand" data-id="1">The North Face</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="brand" data-id="1"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="1"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="The Chanel" data-name="brand" data-id="2">The Chanel</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="brand" data-id="2"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="2"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Altarago" data-name="brand" data-id="3">Altarago</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="brand" data-id="3"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="3"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Johny Doe" data-name="brand" data-id="4">Johny Doe</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="brand" data-id="4"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="4"></span>
+                                    </div>
+                                </div>
+                                <div class="selectOpion">
+                                    <h3 class="selectValue" data-select-value="Calvin Klein" data-name="brand" data-id="5">Calvin Klein</h3>
+                                    <div>
+                                        <span class="far fa-edit editSelect" data-name="brand" data-id="5"></span>
+                                        <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="5"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="name">Upload new image</label>
+                            <input type="file" class="form-control">
+                        </div>
+                        <div class="productImageList">
+                            <h2>Product Images</h2>
+                            <div>
+                               <div>
+                                <img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                <h3>dark cloat.png</h3>
+                                <span class="deleteImageProduct far fa-trash-alt"></span>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Main</label>
+                                </div>
+                               </div>
+                               <div>
+                                <img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                <h3>dark cloat.png</h3>
+                                <span class="deleteImageProduct far fa-trash-alt"></span>
+                                <div>
+                                    <input type="checkbox">
+                                    <label for="">Main</label>
+                                </div>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="formButtons">
+                            <button type="button" class="btn hover-danger closeModal">Cancel</button>
+                            <a href="" class="btn hover-success">Preview</a>
+                            <input type="submit" value="Update" class="btn hover">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -141,5 +282,75 @@
             </div>
         </footer>
     </div>
+    <script>
+        $(document).ready(function(){
+            $(document).on('click', '.selectOpion', function() {
+                if($(this).find('.selectValue').length) {
+                    const value = $(this).find('.selectValue').attr('data-select-value');
+                    const id = $(this).find('.selectValue').attr('data-id');
+                    const dataName = $(this).find('.selectValue').attr('data-name');
+                    $(this).parent().parent().find('select').html(`
+                            <option value="${id}" selected>${value}</option>
+                        `);
+
+                }
+            });
+            $(document).on('click', '.editSelect', function() {
+                const categoryId = $(this).parent().parent().find('.selectValue').attr('data-id');
+                const categoryName = $(this).parent().parent().find('.selectValue').attr('data-select-value');
+                $(this).parent().parent().find('.selectValue').remove();
+                if(!$(this).parent().parent().find('input').length) {
+                    $(this).parent().parent().prepend(`
+                        <input class="form-control inputEditSelect" value="${categoryName}" data-select-value="${categoryName}" data-id="${categoryId}" />
+                    `); 
+                    $(this).parent().prepend(`
+                        <span class="far fa-times cancelEditSelect" data-id="${categoryId}"></span>
+                    `); 
+                }
+                $(this).remove();
+
+                $('.cancelEditSelect').each((index, element) => {
+                    console.log(element)
+                    if(element.getAttribute('data-id') !== categoryId) {
+                        $(element).click();
+                    }
+                });
+            });
+            $(document).on('click', '.cancelEditSelect', function() {
+                const categoryId = $(this).parent().parent().find('.inputEditSelect').attr('data-id');
+                const categoryName = $(this).parent().parent().find('.inputEditSelect').attr('data-select-value');
+
+                $(this).parent().parent().find('.inputEditSelect').remove();
+                if(!$(this).parent().parent().find('h3').length) {
+                    $(this).parent().parent().prepend(`
+                        <h3 class="selectValue" data-select-value="${categoryName}" data-id="${categoryId}">${categoryName}</h3>
+                    `); 
+                    $(this).parent().prepend(`
+                        <span class="far fa-edit editSelect"></span>
+                    `); 
+                }
+                $(this).remove();
+
+            });
+            $(document).on('focusout', '.selectOpions', function() {
+                
+            });
+
+            $(document).on('click', '.editProduct', function() {
+                
+                $('.adminProduct__modal').slideDown(function(){
+                    $('body').addClass("modalOpen");
+                });
+                console.log(1)
+            }); 
+            $(document).on('click', '.closeModal', function() {
+                $('.adminProduct__modal').slideUp(function(){
+                    $('body').removeClass("modalOpen");
+                });
+                console.log(1)
+            }); 
+        });
+
+    </script>
 </body>
 </html>

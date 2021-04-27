@@ -7,6 +7,25 @@ body {
   font-family: "Rajdhani", sans-serif;
 }
 
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+.modalOpen {
+  overflow: hidden;
+}
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -18,6 +37,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 0;
+  border-bottom: .5px solid lightgray;
 }
 
 .nav a {
@@ -1572,6 +1592,203 @@ body {
   color: white;
 }
 
+.adminProduct__modal {
+  display: none;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+}
+
+.adminProduct__modal::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.adminProduct__modal::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+.adminProduct__modal::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+.adminProduct__modal--form {
+  width: 35rem;
+  padding: 1rem 2rem;
+  display: block;
+  margin: 2rem auto;
+  background-color: white;
+}
+
+.adminProduct__modal--form form > div {
+  margin-bottom: 1.5rem;
+}
+
+.adminProduct__modal--form form > div label {
+  font-size: 1.2rem;
+}
+
+.adminProduct__modal--form form .productImageList > div > div {
+  margin-bottom: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminProduct__modal--form form .productImageList > div > div img {
+  height: 10rem;
+  width: 10rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.adminProduct__modal--form form .productImageList > div > div span {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: red;
+}
+
+.adminProduct__modal--form form .productImageList > div > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminProduct__modal--form form .productImageList > div > div > div input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.adminProduct__modal--form form .productImageList > div > div > div input[type="checkbox"]:checked {
+  background-color: #000 !important;
+}
+
+.adminProduct__modal--form form .formButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.adminProduct__modal--form form .formButtons a,
+.adminProduct__modal--form form .formButtons input {
+  margin: 0 0.5rem;
+}
+
+.adminProduct__modal--form form .modifiedSelect {
+  position: relative;
+}
+
+.adminProduct__modal--form form .modifiedSelect select option {
+  display: none;
+  background-color: red;
+}
+
+.adminProduct__modal--form form .modifiedSelect select:focus ~ .selectOpions {
+  display: block;
+}
+
+.adminProduct__modal--form form .modifiedSelect select:focus ~ .selectOpions option {
+  display: none;
+  background-color: red;
+  z-index: -1;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions {
+  z-index: 999;
+  display: none;
+  max-height: 195.5px;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  border-bottom: 0.5px solid lightgray;
+  border-right: 0.5px solid lightgray;
+  border-left: 0.5px solid lightgray;
+  overflow-y: scroll;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div {
+  padding: 0.8rem 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div h3,
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div input {
+  margin: 0 0.8rem;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div input {
+  width: 70%;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div span {
+  margin-right: 0.8rem;
+  font-size: 1.1em;
+  padding: 0.5rem;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div span:hover {
+  background-color: black;
+  color: white;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions > div:hover {
+  background-color: whitesmoke;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions:focus-within {
+  display: block;
+}
+
+.adminProduct__modal--form form .modifiedSelect .selectOpions:focus,
+.adminProduct__modal--form form .modifiedSelect .selectOpions:hover {
+  display: block;
+}
+
 .adminProduct__productTable--search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1594,7 +1811,7 @@ body {
      object-fit: contain;
 }
 
-.adminProduct__productTable--tableContainer .productTableAction a {
+.adminProduct__productTable--tableContainer .productTableAction button {
   margin: 0 0.1rem;
   padding: 0.5rem 1rem;
 }
@@ -1833,28 +2050,28 @@ body {
 }
 
 .adminProductOrder__details--shippingInfo {
-  -webkit-box-flex: .3;
-      -ms-flex: .3;
-          flex: .3;
+  -webkit-box-flex: 0.3;
+      -ms-flex: 0.3;
+          flex: 0.3;
   padding: 0 1rem;
 }
 
 .adminProductOrder__details--billingInfo {
-  -webkit-box-flex: .3;
-      -ms-flex: .3;
-          flex: .3;
+  -webkit-box-flex: 0.3;
+      -ms-flex: 0.3;
+          flex: 0.3;
   padding: 0 1rem;
 }
 
 .adminProductOrder__details--itemSummary {
-  -webkit-box-flex: .4;
-      -ms-flex: .4;
-          flex: .4;
+  -webkit-box-flex: 0.4;
+      -ms-flex: 0.4;
+          flex: 0.4;
   padding: 0 1rem;
 }
 
 .adminProductOrder__details--itemSummary > div {
-  padding-right: .5rem;
+  padding-right: 0.5rem;
   height: 28.125rem;
   max-height: 28.125rem;
   overflow-y: scroll;
@@ -1885,9 +2102,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-top: .5px solid lightgray;
-  margin: .5rem 0;
-  padding-top: .5rem;
+  border-top: 0.5px solid lightgray;
+  margin: 0.5rem 0;
+  padding-top: 0.5rem;
 }
 
 .adminProductOrder__details--itemSummary > div > div img {
@@ -1903,7 +2120,7 @@ body {
 
 .adminProductOrder__details--itemSummary > div > div > div small {
   display: block;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .adminProductOrder__details--itemSummary > div > div > div small span {
@@ -1920,7 +2137,7 @@ body {
 
 .adminProductOrder__details--itemSummary > h3 {
   padding: 1rem;
-  border: .5px solid black;
+  border: 0.5px solid black;
   display: inline-block;
   color: black;
   font-weight: normal;
@@ -1941,6 +2158,113 @@ body {
 .adminProductOrder__details--itemSummary .canceled {
   background-color: red;
   color: white;
+}
+
+.loginRegister {
+  width: 550px;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 50px;
+  border: .5px solid lightgray;
+}
+
+.loginRegister .break {
+  border-bottom: 0.5px solid lightgray;
+}
+
+.loginRegister .break1 {
+  border-bottom: 0.5px solid black;
+  margin-bottom: 2.5rem;
+}
+
+.loginRegister .break2 {
+  border-bottom: 2px solid black;
+}
+
+.loginRegister .invalid-feedback {
+  color: red;
+  font-size: 13px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+.loginRegister .is-invalid {
+  border: 0.5px solid red !important;
+}
+
+.loginRegister__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginRegister__heading > a {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.loginRegister__heading > a > h5 {
+  padding: .3rem 0;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.loginRegister__heading > a {
+  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000));
+  background-image: linear-gradient(#000, #000);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  -webkit-transition: background-size 0.25s, color 0.25s;
+  transition: background-size 0.25s, color 0.25s;
+  color: #000;
+}
+
+.loginRegister__heading > a:hover {
+  background-size: 100% 100%;
+  color: white;
+}
+
+.loginRegister__body {
+  padding: 30px 90px;
+}
+
+.loginRegister__body > h3 {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 30px;
+}
+
+.loginRegister__input {
+  margin-bottom: 1.4rem;
+}
+
+.loginRegister__input label {
+  font-weight: bold;
+}
+
+.loginRegister__input label small {
+  font-weight: lighter;
+}
+
+.loginRegister__input label span {
+  color: red;
+}
+
+.loginRegister .loginRegister__body input[type="submit"] {
+  margin-top: 2rem;
+  display: block !important;
+  width: 100%;
 }
 
 .tbl {
