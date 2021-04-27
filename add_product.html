@@ -69,23 +69,49 @@
                         <label for="name">Description</label>
                         <textarea name="" id="" cols="30" rows="10" class="form-control textArea-control-2" placeholder="product description"></textarea>
                     </div>
+                    <div>
+                        <label for="name">Price</label>
+                        <input type="text" class="form-control" placeholder="product price">
+                    </div>
                     <div class="modifiedSelect">
                         <label for="name">Categories</label>
-                        <select name="" id="" class="form-control parentSelect">
+                        <select name="category" id="" class="form-control parentSelect">
+                            <option value="">Select Category</option>
                         </select>
                         <div class="selectOpions" tabindex="-1">
                             <div class="selectOpion">
-                                <h3 class="selectValue" data-select-value="Bags & Backpacks" data-id="1">Bags & Backpacks</h3>
+                                <h3 class="selectValue" data-select-value="Bags & Backpacks" data-name="category" data-id="1">Bags & Backpacks</h3>
                                 <div>
-                                    <span class="far fa-edit editSelect"></span>
-                                    <span class="far fa-trash-alt"></span>
+                                    <span class="far fa-edit editSelect" data-name="category" data-id="1"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="1"></span>
                                 </div>
                             </div>
                             <div class="selectOpion">
-                                <h3 class="selectValue" data-select-value="Pants & Jeans" data-id="1">Pants & Jeans</h3>
+                                <h3 class="selectValue" data-select-value="Pants & Jeans" data-name="category" data-id="2">Pants & Jeans</h3>
                                 <div>
-                                    <span class="far fa-edit editSelect"></span>
-                                    <span class="far fa-trash-alt"></span>
+                                    <span class="far fa-edit editSelect" data-name="category" data-id="2"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="2"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Pendant & Necklace" data-name="category" data-id="3">Pendant & Necklace</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="category" data-id="3"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="3"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="T - Shirts" data-name="category" data-id="4">T - Shirts</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="category" data-id="4"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="4"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Jackets" data-name="category" data-id="5">Jackets</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="category" data-id="5"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="category" data-id="5"></span>
                                 </div>
                             </div>
                         </div>
@@ -94,11 +120,48 @@
                         <label for="name">or add new Category</label>
                         <input type="text" class="form-control" placeholder="add new product category">
                     </div>
-                    <div>
+                    <div class="modifiedSelect">
                         <label for="name">Brands</label>
-                        <select name="" id="" class="form-control">
-                            <option>The North Face</option>
+                        <select name="brand" id="" class="form-control parentSelect">
+                            <option value="">Select Brand</option>
                         </select>
+                        <div class="selectOpions" tabindex="-1">
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="The North Face" data-name="brand" data-id="1">The North Face</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="brand" data-id="1"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="1"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="The Chanel" data-name="brand" data-id="2">The Chanel</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="brand" data-id="2"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="2"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Altarago" data-name="brand" data-id="3">Altarago</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="brand" data-id="3"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="3"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Johny Doe" data-name="brand" data-id="4">Johny Doe</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="brand" data-id="4"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="4"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Calvin Klein" data-name="brand" data-id="5">Calvin Klein</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect" data-name="brand" data-id="5"></span>
+                                    <span class="far fa-trash-alt deleteCategory" data-name="brand" data-id="5"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div>
                         <label for="name">Upload new image</label>
@@ -161,29 +224,51 @@
             if($(this).find('.selectValue').length) {
                 const value = $(this).find('.selectValue').attr('data-select-value');
                 const id = $(this).find('.selectValue').attr('data-id');
-                console.log(value)
-                $('.parentSelect').html(`
-                    <option value="${id}" selected>${value}</option>
-                `);
-            }
+                const dataName = $(this).find('.selectValue').attr('data-name');
+                $(this).parent().parent().find('select').html(`
+                        <option value="${id}" selected>${value}</option>
+                    `);
 
+            }
         });
         $(document).on('click', '.editSelect', function() {
             const categoryId = $(this).parent().parent().find('.selectValue').attr('data-id');
             const categoryName = $(this).parent().parent().find('.selectValue').attr('data-select-value');
             $(this).parent().parent().find('.selectValue').remove();
-            
             if(!$(this).parent().parent().find('input').length) {
                 $(this).parent().parent().prepend(`
-                    <input class="form-control inputEditSelect" value="${categoryName}" />
+                    <input class="form-control inputEditSelect" value="${categoryName}" data-select-value="${categoryName}" data-id="${categoryId}" />
                 `); 
                 $(this).parent().prepend(`
-                    <span class="far fa-times cancelEditSelect"></span>
+                    <span class="far fa-times cancelEditSelect" data-id="${categoryId}"></span>
                 `); 
             }
             $(this).remove();
+
+            $('.cancelEditSelect').each((index, element) => {
+                console.log(element)
+                if(element.getAttribute('data-id') !== categoryId) {
+                    $(element).click();
+                }
+            });
         });
         $(document).on('click', '.cancelEditSelect', function() {
+            const categoryId = $(this).parent().parent().find('.inputEditSelect').attr('data-id');
+            const categoryName = $(this).parent().parent().find('.inputEditSelect').attr('data-select-value');
+
+            $(this).parent().parent().find('.inputEditSelect').remove();
+            if(!$(this).parent().parent().find('h3').length) {
+                $(this).parent().parent().prepend(`
+                    <h3 class="selectValue" data-select-value="${categoryName}" data-id="${categoryId}">${categoryName}</h3>
+                `); 
+                $(this).parent().prepend(`
+                    <span class="far fa-edit editSelect"></span>
+                `); 
+            }
+            $(this).remove();
+
+        });
+        $(document).on('focusout', '.selectOpions', function() {
             
         });
     </script>
