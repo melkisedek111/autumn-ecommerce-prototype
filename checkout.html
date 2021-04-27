@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" ></script>
     <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
@@ -59,33 +60,167 @@
         <div class="checkout">
             <div class="checkout__bag">
                 <h1>Shopping Bag Summary</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img src="https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
-                            </td>
-                            <td>
-                                <h3>Lactote Designer Bag Limited Edition</h3>
-                            </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="tableContainer">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                </td>
+                                <td>
+                                    <h3>Lactote Designer Bag Limited Edition</h3>
+                                </td>
+                                <td>
+                                    <h3>$244.99</h3>
+                                </td>
+                                <td>
+                                    <h3>5</h3>
+                                </td>
+                                <td>
+                                    <h3>$2992.99</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                </td>
+                                <td>
+                                    <h3>Lactote Designer Bag Limited Edition</h3>
+                                </td>
+                                <td>
+                                    <h3>$244.99</h3>
+                                </td>
+                                <td>
+                                    <h3>5</h3>
+                                </td>
+                                <td>
+                                    <h3>$2992.99</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                </td>
+                                <td>
+                                    <h3>Lactote Designer Bag Limited Edition</h3>
+                                </td>
+                                <td>
+                                    <h3>$244.99</h3>
+                                </td>
+                                <td>
+                                    <h3>5</h3>
+                                </td>
+                                <td>
+                                    <h3>$2992.99</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="https://images.pexels.com/photos/2529157/pexels-photo-2529157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                                </td>
+                                <td>
+                                    <h3>Lactote Designer Bag Limited Edition</h3>
+                                </td>
+                                <td>
+                                    <h3>$244.99</h3>
+                                </td>
+                                <td>
+                                    <h3>5</h3>
+                                </td>
+                                <td>
+                                    <h3>$2992.99</h3>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="totalDetails">
+                    <h1>Total: <span>$2922.99</span></h1>
+                </div>
             </div>
             <div class="checkout__info">
                 <h1>Payment Info</h1>
+                <div class="checkout__info--details">
+                    <div class="shippingInfo">
+                        <h2>Shipping Information</h2>
+                        <div>
+                            <h3>First Name: <span>Melkisedek</span></h3>
+                            <h3>Last Name: <span>Ubalde</span></h3>
+                            <h3>Address: <span>Baragay Salvacion</span></h3>
+                            <h3>Address 2: <span></span></h3>
+                            <h3>City: <span>Virac</span></h3>
+                            <h3>State: <span>Catanduanes</span></h3>
+                            <h3>Zipcode: <span>4800</span></h3>
+                        </div>
+                    </div>
+                    <div class="billingInfo">
+                        <h2>Billing Information</h2>
+                       <div class="shippingCheckbox">
+                            <input type="checkbox" name="useShippingInfo" id="useShippingInfo" class=".checkmark">
+                            <label for="useShippingInfo">Same as shipping</label>
+                       </div>
+                        <div>
+                            <div>
+                                <label for="">First Name</label>
+                                <input type="text" class="" placeholder="Enter your first name">
+                                <div>
+                                    asd
+                                </div>
+                            </div>
+                            <div>
+                                <label for="">Last Name</label>
+                                <input type="text" class="" placeholder="Enter your last name">
+                            </div>
+                            <div>
+                                <label for="">Address</label>
+                                <input type="text" class="" placeholder="Enter your address">
+                            </div>
+                            <div>
+                                <label for="">Address 2</label>
+                                <input type="text" class="" placeholder="Enter your second address">
+                            </div>
+                            <div>
+                                <label for="">City</label>
+                                <input type="text" class="" placeholder="Enter your city">
+                            </div>
+                            <div>
+                                <label for="">State</label>
+                                <input type="text" class="" placeholder="Enter your state">
+                            </div>
+                            <div>
+                                <label for="">Zipcode</label>
+                                <input type="text" class="" placeholder="Enter your zipcode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardInfo">
+                        <h2>Card Information</h2>
+                        <div>
+                            <div>
+                                <label for="">Card Number</label>
+                                <div id="card-number"><!--Stripe.js injects the Card Element--></div>
+                            </div>
+                            <div>
+                                <label for="">Card CVC</label>
+                                <div id="card-cvc"><!--Stripe.js injects the Card Element--></div>
+                            </div>
+                            <div>
+                                <label for="">Card Expiration</label>
+                                <div id="card-exp"><!--Stripe.js injects the Card Element--></div>
+                            </div>
+                            <input type="submit" class="btn hover" value="CHECKOUT">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer>
@@ -109,5 +244,85 @@
             </div>
         </footer>
     </div>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script  type="text/javascript">
+         $(document).ready(function() {
+            
+
+            var stripe = Stripe('pk_test_51Guub0ESprxiEf1pGomNfB1hTwrbZDQfMlQyNztkIrTuJHx2O6fF11UrgG080nd9jZY4PppmkBuOKkcNWe4GBlSI00zvGQdzYN');
+
+            // Create an instance of Elements
+            var elements = stripe.elements();
+
+            // Custom styling can be passed to options when creating an Element.
+            // (Note that this demo uses a wider set of styles than the guide below.)
+
+
+            // Style button with BS
+            // document.querySelector('#checkout').classList = 'btn btn-primary btn-block mt-4';
+
+            // Create an instance of the card Element
+            var cardNumber = elements.create('cardNumber', {
+                classes:{
+                    base: "base"
+                }
+             });
+             var cardCvc = elements.create('cardCvc', {
+                classes:{
+                    base: "base"
+                }
+             });
+             var cardExpiry = elements.create('cardExpiry', {
+                classes:{
+                    base: "base"
+                }
+             });
+            // Add an instance of the card Element into the `card-element` <div>
+            cardNumber.mount('#card-number');
+            cardCvc.mount('#card-cvc');
+            cardExpiry.mount('#card-exp');
+
+            // Handle real-time validation errors from the card Element.
+            card.addEventListener('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+            });
+
+            // Handle form submission
+            var form = document.getElementById('payment-form');
+            form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                // Inform the user if there was an error
+                var errorElement = document.getElementById('card-errors');
+                errorElement.textContent = result.error.message;
+                } else {
+                // Send the token to your server
+                stripeTokenHandler(result.token);
+                }
+            });
+            });
+
+            function stripeTokenHandler(token) {
+            // Insert the token ID into the form so it gets submitted to the server
+            var form = document.getElementById('payment-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            // Submit the form
+            form.submit();
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1234,13 +1234,8 @@ body {
 }
 
 .checkout {
-  height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  height: 100%;
+  min-height: 80vh;
 }
 
 .checkout h1, .checkout h2, .checkout h3, .checkout h4, .checkout h5, .checkout h6 {
@@ -1249,42 +1244,273 @@ body {
 
 .checkout__bag {
   padding: .8rem;
-  -webkit-box-flex: .65;
-      -ms-flex: .65;
-          flex: .65;
+  height: 35rem;
 }
 
-.checkout__bag table {
+.checkout__bag .tableContainer {
+  overflow-y: scroll;
+  border-bottom: .5px solid lightgray;
+  height: 80%;
+}
+
+.checkout__bag .tableContainer::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.checkout__bag .tableContainer::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+.checkout__bag .tableContainer::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+.checkout__bag .tableContainer table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.checkout__bag table th:nth-child(1) {
+.checkout__bag .tableContainer table th:nth-child(1) {
   width: 20%;
 }
 
-.checkout__bag table th:nth-child(2) {
-  width: 30%;
+.checkout__bag .tableContainer table th:nth-child(2) {
+  width: 35%;
 }
 
-.checkout__bag table th {
+.checkout__bag .tableContainer table th:nth-child(3) {
+  width: 15%;
+}
+
+.checkout__bag .tableContainer table th:nth-child(4) {
+  width: 15%;
+}
+
+.checkout__bag .tableContainer table th:nth-child(5) {
+  width: 15%;
+}
+
+.checkout__bag .tableContainer table th {
   border-bottom: .5px solid lightgray;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
-.checkout__bag table tr td img {
+.checkout__bag .tableContainer table tr td {
+  padding: .5rem 0;
+}
+
+.checkout__bag .tableContainer table tr td img {
   height: 7.5rem;
   width: 7.5rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
+.checkout__bag .tableContainer table tr td:not(td:nth-child(2)) {
+  text-align: center;
+}
+
+.checkout__bag .totalDetails {
+  margin-top: 1rem;
+  text-align: right;
+}
+
 .checkout__info {
   padding: .8rem;
-  -webkit-box-flex: .3;
-      -ms-flex: .3;
-          flex: .3;
-  background-color: whitesmoke;
+  border: .5px solid lightgray;
+}
+
+.checkout__info > h1 {
+  margin-bottom: 1.5rem !important;
+}
+
+.checkout__info--details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkout__info--details > div > h2 {
+  margin-bottom: 1rem !important;
+}
+
+.checkout__info--details .shippingInfo {
+  -webkit-box-flex: .4;
+      -ms-flex: .4;
+          flex: .4;
+  margin-bottom: 1.5rem;
+}
+
+.checkout__info--details .shippingInfo h2 {
+  margin-bottom: .65rem;
+}
+
+.checkout__info--details .shippingInfo div {
+  padding-left: .5rem;
+}
+
+.checkout__info--details .shippingInfo div h3 {
+  font-weight: 500;
+  margin-bottom: .3rem;
+}
+
+.checkout__info--details .shippingInfo div h3 span {
+  font-weight: 700;
+}
+
+.checkout__info--details .billingInfo {
+  -webkit-box-flex: .4;
+      -ms-flex: .4;
+          flex: .4;
+}
+
+.checkout__info--details .billingInfo .shippingCheckbox {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkout__info--details .billingInfo .shippingCheckbox input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkout__info--details .billingInfo .shippingCheckbox input[type="checkbox"]:checked {
+  background-color: #000 !important;
+}
+
+.checkout__info--details .billingInfo .shippingCheckbox label {
+  font-size: 1.1rem;
+}
+
+.checkout__info--details .billingInfo > div > div {
+  padding: 0 1rem;
+  margin-bottom: .5rem;
+}
+
+.checkout__info--details .billingInfo > div > div label {
+  font-size: 1.1rem;
+}
+
+.checkout__info--details .billingInfo > div > div input[type="text"] {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 0.5px solid black;
+  font-family: "Rajdhani", sans-serif;
+  padding: .19rem 0;
+  outline: none;
+  font-size: 17px;
+}
+
+.checkout__info--details .cardInfo {
+  -webkit-box-flex: .4;
+      -ms-flex: .4;
+          flex: .4;
+}
+
+.checkout__info--details .cardInfo > div > div {
+  padding: 0 1rem;
+  margin-bottom: .5rem;
+}
+
+.checkout__info--details .cardInfo > div > div label {
+  font-size: 1.1rem;
+}
+
+.checkout__info--details .cardInfo > div > div .base {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 0.5px solid black;
+  font-family: "Rajdhani", sans-serif;
+  padding: .3rem 0;
+  outline: none;
+  font-size: 17px;
+}
+
+.checkout__info--details .cardInfo > div > div > div {
+  padding: .3rem 0;
+}
+
+.checkout__info--details .cardInfo > div .btn {
+  display: block !important;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+}
+
+.dashboard__orderTable--search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dashboard__orderTable--search input, .dashboard__orderTable--search select {
+  width: 10rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard__orderTable--tableContainer .tablePagination {
+  margin-top: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard__orderTable--tableContainer .tablePagination a:nth-child(1) {
+  border-left: .5px solid lightgray;
+}
+
+.dashboard__orderTable--tableContainer .tablePagination a {
+  padding: 5px 10px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  text-decoration: none;
+  color: black;
+  border-right: .5px solid lightgray;
+  border-top: .5px solid lightgray;
+  border-bottom: .5px solid lightgray;
+}
+
+.dashboard__orderTable--tableContainer .tablePagination a:hover {
+  background-color: black;
+  color: white;
+}
+
+.tbl {
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: .5px solid lightgray;
+}
+
+.tbl th, .tbl td {
+  border: .5px solid lightgray;
+  text-align: center;
+  padding: 1.2rem .5rem;
+}
+
+.tbl td {
+  font-size: 1.1rem;
 }
 
 footer {
