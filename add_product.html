@@ -57,116 +57,82 @@
         </div>
     </div>
     <div class="wrapper">
-        <div class="dashboard">
-            <h1>Orders</h1>
-            <div class="dashboard__orderTable">
-                <div class="dashboard__orderTable--search">
-                    <input type="text" class="form-control" placeholder="Search order here">
-                    <select name="" id="" class="form-control">
-                        <option value="">Show All</option>
-                        <option value="">Shipped</option>
-                        <option value="">Cancelled</option>
-                    </select>
-                </div>
-                <div class="dashboard__orderTable--tableContainer">
-                    <table class="tbl">
-                        <thead>
-                            <tr>
-                                <th width="10%">Order ID</th>
-                                <th width="20%">Name</th>
-                                <th width="10%">Date</th>
-                                <th width="40%">Billing Address</th>
-                                <th width="5%">Total</th>
-                                <th width="15%">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>199</td>
-                                <td>Melkisedek Ubalde</td>
-                                <td>9/6/2014</td>
-                                <td>Salvacion, Virac, Catanduanes 4800</td>
-                                <td>$49.99</td>
-                                <td>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Status</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>199</td>
-                                <td>Melkisedek Ubalde</td>
-                                <td>9/6/2014</td>
-                                <td>Salvacion, Virac, Catanduanes 4800</td>
-                                <td>$49.99</td>
-                                <td>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Status</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>199</td>
-                                <td>Melkisedek Ubalde</td>
-                                <td>9/6/2014</td>
-                                <td>Salvacion, Virac, Catanduanes 4800</td>
-                                <td>$49.99</td>
-                                <td>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Status</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>199</td>
-                                <td>Melkisedek Ubalde</td>
-                                <td>9/6/2014</td>
-                                <td>Salvacion, Virac, Catanduanes 4800</td>
-                                <td>$49.99</td>
-                                <td>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Status</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>199</td>
-                                <td>Melkisedek Ubalde</td>
-                                <td>9/6/2014</td>
-                                <td>Salvacion, Virac, Catanduanes 4800</td>
-                                <td>$49.99</td>
-                                <td>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Status</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>199</td>
-                                <td>Melkisedek Ubalde</td>
-                                <td>9/6/2014</td>
-                                <td>Salvacion, Virac, Catanduanes 4800</td>
-                                <td>$49.99</td>
-                                <td>
-                                    <select name="" id="" class="form-control">
-                                        <option value="">Status</option>
-                                    </select>
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-                    <div class="tablePagination">
-                        <a href="">First Page</a>
-                        <a href="">Previous Page</a>
-                        <a href="">1</a>
-                        <a href="">2</a>
-                        <a href="">3</a>
-                        <a href="">4</a>
-                        <a href="">Next Page</a>
-                        <a href="">Last Page</a>
+        <div class="addProduct">
+            <div class="addProduct__form">
+                <h1>Add new product</h1>
+                <form action="">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" placeholder="product name">
                     </div>
-                </div>
+                    <div>
+                        <label for="name">Description</label>
+                        <textarea name="" id="" cols="30" rows="10" class="form-control textArea-control-2" placeholder="product description"></textarea>
+                    </div>
+                    <div class="modifiedSelect">
+                        <label for="name">Categories</label>
+                        <select name="" id="" class="form-control parentSelect">
+                        </select>
+                        <div class="selectOpions" tabindex="-1">
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Bags & Backpacks" data-id="1">Bags & Backpacks</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect"></span>
+                                    <span class="far fa-trash-alt"></span>
+                                </div>
+                            </div>
+                            <div class="selectOpion">
+                                <h3 class="selectValue" data-select-value="Pants & Jeans" data-id="1">Pants & Jeans</h3>
+                                <div>
+                                    <span class="far fa-edit editSelect"></span>
+                                    <span class="far fa-trash-alt"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="name">or add new Category</label>
+                        <input type="text" class="form-control" placeholder="add new product category">
+                    </div>
+                    <div>
+                        <label for="name">Brands</label>
+                        <select name="" id="" class="form-control">
+                            <option>The North Face</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="name">Upload new image</label>
+                        <input type="file" class="form-control">
+                    </div>
+                    <div class="productImageList">
+                        <h2>Product Images</h2>
+                        <div>
+                           <div>
+                            <img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                            <h3>dark cloat.png</h3>
+                            <span class="deleteImageProduct far fa-trash-alt"></span>
+                            <div>
+                                <input type="checkbox">
+                                <label for="">Main</label>
+                            </div>
+                           </div>
+                           <div>
+                            <img src="https://images.pexels.com/photos/157675/fashion-men-s-individuality-black-and-white-157675.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                            <h3>dark cloat.png</h3>
+                            <span class="deleteImageProduct far fa-trash-alt"></span>
+                            <div>
+                                <input type="checkbox">
+                                <label for="">Main</label>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="formButtons">
+                        <a href="" class="btn hover-danger">Cancel</a>
+                        <a href="" class="btn hover-success">Preview</a>
+                        <input type="submit" value="Update" class="btn hover">
+                    </div>
+                </form>
             </div>
         </div>
         <footer>
@@ -190,5 +156,36 @@
             </div>
         </footer>
     </div>
+    <script>
+        $(document).on('click', '.selectOpion', function() {
+            if($(this).find('.selectValue').length) {
+                const value = $(this).find('.selectValue').attr('data-select-value');
+                const id = $(this).find('.selectValue').attr('data-id');
+                console.log(value)
+                $('.parentSelect').html(`
+                    <option value="${id}" selected>${value}</option>
+                `);
+            }
+
+        });
+        $(document).on('click', '.editSelect', function() {
+            const categoryId = $(this).parent().parent().find('.selectValue').attr('data-id');
+            const categoryName = $(this).parent().parent().find('.selectValue').attr('data-select-value');
+            $(this).parent().parent().find('.selectValue').remove();
+            
+            if(!$(this).parent().parent().find('input').length) {
+                $(this).parent().parent().prepend(`
+                    <input class="form-control inputEditSelect" value="${categoryName}" />
+                `); 
+                $(this).parent().prepend(`
+                    <span class="far fa-times cancelEditSelect"></span>
+                `); 
+            }
+            $(this).remove();
+        });
+        $(document).on('click', '.cancelEditSelect', function() {
+            
+        });
+    </script>
 </body>
 </html>
